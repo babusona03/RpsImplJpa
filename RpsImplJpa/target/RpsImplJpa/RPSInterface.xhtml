@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"     
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+      
+      <h:head>
+      	<title>RPS JSF Game Page</title>
+      </h:head>
+      <h:body>
+      <h1>Rock ,Paper ,Scissors!</h1>
+      	<h:form>      		
+      		<br/>
+      		<!--  
+      		<h:dataTable value="#{rpsOption.options}" var="option" border="1">
+      			<h:column>
+      				<f:facet name="header">Select Choice</f:facet>
+      				<h:outputText value="#{option}" />
+      			</h:column>	
+      			<h:column>
+      				<h:selectOneRadio group="rps" value="#{rpsOption.userChoice}">
+      					<f:selectItem itemValue="#{option}"></f:selectItem>
+      				</h:selectOneRadio>
+      			</h:column>	
+      		</h:dataTable>
+      		 -->
+      		 
+      		<h:panelGrid id="panel" border="1" columns="2">
+      			<f:facet name="header">
+      				<h:outputText value="Select Choice:" />
+      			</f:facet>
+      			<h:outputText value = "ROCK" />
+      			
+      			<h:selectOneRadio group ="rps" value="#{rpsOption.userChoice}" required="true">
+   					<f:selectItem itemValue="ROCK" itemLabel="Choice 1 - Rock" checked="checked"/>   					
+				</h:selectOneRadio> 
+      			
+      			<h:outputText value = "PAPER" />
+      			
+      			<h:selectOneRadio group ="rps" value="#{rpsOption.userChoice}"  required="true">
+					<f:selectItem itemValue="PAPER" itemLabel="Choice 2 - Paper" />
+				</h:selectOneRadio>
+      			 
+      			<h:outputText value = "SCISSORS" /> 
+      							
+				<h:selectOneRadio group ="rps" value="#{rpsOption.userChoice}"  required="true">
+   					<f:selectItem itemValue="SCISSORS" itemLabel="Choice 3 - Scissors" />
+      			</h:selectOneRadio>    		  
+				<h:commandButton action="#{gameChoiceProcessor.calculateGameResult()}" value="Fire!" />
+				<h:commandButton action="RPSHistory" value="History!" />	
+      			<f:facet name="footer">
+      				<h:outputText value="Select Action!"/>
+      			</f:facet>
+      		</h:panelGrid>
+      		
+      		<br/>      		
+      	</h:form>
+      	<br/>
+      	
+      	<br/>
+      	
+
+      	
+      	<!-- 
+      	<h:panelGrid id = "panel" columns = "2" border = "1" cellpadding = "10" cellspacing = "1">   
+   			<f:facet name = "header">
+      			<h:outputText value = "Login"/>
+   			</f:facet>
+   			
+   			<h:outputLabel value = "Username" />   					<h:inputText  />
+   			<h:outputLabel value = "Password" />   					<h:inputSecret />
+   			   
+   			<f:facet name = "footer">
+      			<h:panelGroup style = "display:block; text-align:center">
+        			<h:commandButton id = "submit" value = "Submit" />
+      			</h:panelGroup>
+   			</f:facet>
+		</h:panelGrid>
+		-->
+      </h:body>
+</html>

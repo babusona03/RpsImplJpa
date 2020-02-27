@@ -1,0 +1,13 @@
+->Coded to abstraction for JPA, used provider implemented by AS.
+
+->persistence.xml, standalone.xml and pom.xml are crucial, attached in this folder, should be noted as there is no invocation of provider,no dependency attached.
+
+			"	First of all, when using JTA as transaction type, the database connection details 
+			shouldn't be in the persistence.xml file. They should be in the standalone.xml from your WilfFly.
+			Then the persistence.xml just reference it.	"
+
+->edited default-binding at standalone.xml,other wise , h2 inmem databasewas defaulted to. standalone default and edited copy attached, difference tobe noted.
+
+->jdbc driver and module.xml to be placed at /home/razor/Workshop/server/wildfly-17.0.1.Final/modules/system/layers/base/com/oracle/main
+
+->no jdbc driver at classpath, no dependency in pom. Convension over configuration.
